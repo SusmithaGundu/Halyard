@@ -24,7 +24,7 @@ dependencies {
   implementation 'com.amazonaws:aws-java-sdk-s3:1.11.534'
   implementation 'com.google.apis:google-api-services-compute'
   implementation 'com.google.apis:google-api-services-appengine:v1-rev92-1.25.0'
-  implementation group: 'com.google.apis', name: 'google-api-services-run', version: 'v2-rev20220429-1.32.1'
+  implementation  group: 'com.google.apis', name: 'google-api-services-run', version: 'v2-rev20220429-1.32.1'
   implementation 'com.microsoft.azure:adal4j:1.6.3'
   implementation 'com.microsoft.azure:azure:1.19.0'
   implementation 'commons-collections:commons-collections:3.2.2'
