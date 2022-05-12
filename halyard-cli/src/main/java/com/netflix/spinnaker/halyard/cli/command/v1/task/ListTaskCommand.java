@@ -27,6 +27,7 @@ import lombok.Getter;
 
 @Parameters(separators = "=")
 public class ListTaskCommand extends NestableCommand {
+
   @Getter(AccessLevel.PUBLIC)
   private String commandName = "list";
 
