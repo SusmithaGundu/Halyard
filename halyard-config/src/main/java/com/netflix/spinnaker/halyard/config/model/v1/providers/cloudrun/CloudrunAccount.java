@@ -9,7 +9,4 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class CloudrunAccount extends CommonGoogleAccount {
-  private String localRepositoryDirectory;
-  @LocalFile @SecretFile private String sshKnownHostsFilePath;
-  private boolean sshTrustUnknownHosts;
 }

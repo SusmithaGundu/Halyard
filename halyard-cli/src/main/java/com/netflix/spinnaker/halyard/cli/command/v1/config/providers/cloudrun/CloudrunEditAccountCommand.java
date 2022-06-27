@@ -24,37 +24,10 @@ public class CloudrunEditAccountCommand extends AbstractEditAccountCommand<Cloud
       description = CommonGoogleCommandProperties.JSON_PATH_DESCRIPTION)
   private String jsonPath;
 
-  @Parameter(
-      names = "--local-repository-directory",
-      description = CloudrunCommandProperties.LOCAL_REPOSITORY_DIRECTORY_DESCRIPTION)
-  private String localRepositoryDirectory;
-
-  @Parameter(
-      names = "--ssh-known-hosts-file-path",
-      converter = LocalFileConverter.class,
-      description = CloudrunCommandProperties.SSH_KNOWN_HOSTS_FILE_PATH)
-  private String sshKnownHostsFilePath;
-
-  @Parameter(
-      names = "--ssh-trust-unknown-hosts",
-      description = CloudrunCommandProperties.SSH_TRUST_UNKNOWN_HOSTS,
-      arity = 1)
-  private Boolean sshTrustUnknownHosts = null;
-
   @Override
   protected Account editAccount(CloudrunAccount account) {
     account.setJsonPath(isSet(jsonPath) ? jsonPath : account.getJsonPath());
     account.setProject(isSet(project) ? project : account.getProject());
-    account.setLocalRepositoryDirectory(
-        isSet(localRepositoryDirectory)
-            ? localRepositoryDirectory
-            : account.getLocalRepositoryDirectory());
-
-    account.setSshKnownHostsFilePath(
-        isSet(sshKnownHostsFilePath) ? sshKnownHostsFilePath : account.getSshKnownHostsFilePath());
-    account.setSshTrustUnknownHosts(
-        sshTrustUnknownHosts != null ? sshTrustUnknownHosts : account.isSshTrustUnknownHosts());
-
     return account;
   }
 }

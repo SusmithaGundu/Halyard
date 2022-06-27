@@ -16,7 +16,7 @@ public class CloudrunAccountCommand extends AbstractAccountCommand {
         "An account in the Cloud Run provider refers to a single Cloud Run application. ",
         "Spinnaker assumes that your Cloud Run application already exists. ",
         "You can create an application in your Google Cloud Platform project by running ",
-        "`gcloud app create --region <region>`.");
+        "gcloud run deploy <service-name> --image <image_name>");
   }
 
   public CloudrunAccountCommand() {

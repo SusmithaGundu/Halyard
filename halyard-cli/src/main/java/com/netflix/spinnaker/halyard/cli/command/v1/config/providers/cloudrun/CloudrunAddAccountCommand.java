@@ -26,25 +26,10 @@ public class CloudrunAddAccountCommand extends AbstractAddAccountCommand {
       description = CommonGoogleCommandProperties.JSON_PATH_DESCRIPTION)
   private String jsonPath;
 
-  @Parameter(
-      names = "--local-repository-directory",
-      description = CloudrunCommandProperties.LOCAL_REPOSITORY_DIRECTORY_DESCRIPTION)
-  private String localRepositoryDirectory = "/var/tmp/clouddriver";
-
-  @Parameter(
-      names = "--ssh-trust-unknown-hosts",
-      description = CloudrunCommandProperties.SSH_TRUST_UNKNOWN_HOSTS,
-      arity = 1)
-  private boolean sshTrustUnknownHosts = false;
-
   @Override
   protected Account buildAccount(String accountName) {
     CloudrunAccount account = (CloudrunAccount) new CloudrunAccount().setName(accountName);
     account.setProject(project).setJsonPath(jsonPath);
-
-    account
-        .setLocalRepositoryDirectory(localRepositoryDirectory)
-        .setSshTrustUnknownHosts(sshTrustUnknownHosts);
     return account;
   }
 
